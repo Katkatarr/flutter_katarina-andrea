@@ -1,0 +1,12 @@
+1. Cari dan tuliskan 5 aplikasi yang berjalan pada sistem operasi IOS namun tidak pada sistem operasi Android
+Jawaban :
+a. Safari Browser
+b. GarageBand: Aplikasi produksi musik dan rekaman yang dikembangkan oleh Apple. Ini tersedia hanya untuk perangkat iOS dan MacOS.
+c. iMovie: Aplikasi penyuntingan video yang dirancang khusus untuk perangkat iOS dan MacOS.
+d. Final Cut Pro: Salah satu aplikasi penyuntingan video profesional yang dikembangkan oleh Apple, eksklusif untuk sistem operasi MacOS.
+e. Keynote: Aplikasi presentasi yang dikembangkan oleh Apple dan hanya tersedia untuk iOS dan MacOS.
+
+2. Cari 2 buah software yang dapat berjalan pada platform website dan juga Desktop!
+Jawaban :
+1. GitHub
+2. WhatsApp

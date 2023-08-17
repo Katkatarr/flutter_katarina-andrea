@@ -1,0 +1,15 @@
+1. Tuliskan 5 bahasa pemrograman untuk membuat aplikasi Mobile(contoh: C# untuk Desktop Windows)
+Jawaban : 
+a. Java untuk aplikasi Android 
+b. Swift untuk membuat aplikasi iOS menggunakan Xcode, seperti WhatsApp.
+c. Kotlin untuk membuat aplikasi Android seperti Pinterest 
+d. Dart (dengan Flutter) untuk membuat aplikasi lintas platform seperti Google Ads, Alibaba, dan Reflectly.
+e. JavaScript (dengan React Native) untuk membuat aplikasi lintas platform seperti Facebook, Instagram, dan Airbnb.
+
+2. Cari dan tuliskan 5 aplikasi yang berjalan pada sistem operasi Android namun tidak pada sistem operasi iOS
+Jawaban :
+a. Tasker: Aplikasi otomatisasi yang memungkinkan pengguna Android membuat tindakan otomatis berdasarkan skenario tertentu.
+b. ES File Explorer: Aplikasi manajemen file yang mencakup berbagai fitur seperti browsing file, mengelola aplikasi, dan mengelola penyimpanan.
+c. Lucky Patcher: Aplikasi yang digunakan untuk memodifikasi aplikasi dan permainan Android, termasuk menghilangkan iklan atau mengubah izin.
+d. Greenify: Aplikasi optimasi baterai yang membantu mengelola aplikasi latar belakang agar tidak menguras daya baterai secara berlebihan.
+e. MiXplorer: Aplikasi manajemen file yang kaya fitur dan dapat dikustomisasi untuk pengguna Android.
