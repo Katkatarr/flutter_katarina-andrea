@@ -1,7 +1,10 @@
 //1. Buatlah rumus keliling dan luas persegi dan persegi panjang dengan menggunakan bahasa pemrograman Dart
+//deklarasi variabel
 int panjang = 5;
 int lebar = 6;
 int sisi = 10;
+
+//deklarasi rumus keliling dan luas 
 int kelPersegi = 4 * sisi;
 int kelPersegiPanjang = 2 * (panjang + lebar);
 int luasPersegi = sisi * sisi;
@@ -20,8 +23,11 @@ void main(){
 
 
 //2. Implementasikan rumus keliling dan luas dari Lingkaran dengan menggunakan Bahasa Dart
+//deklarasi variabel
 double r = 10;
 double pi = 3.14;
+
+//deklarasi rumus keliling dan luas
 double kelilingLingkaran = 2 * pi* r;
 double luasLingkaran = pi * r * r;
 
