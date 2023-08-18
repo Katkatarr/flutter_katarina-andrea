@@ -8,5 +8,5 @@ int kelSegitiga = 3 * sisi;
 
 void main(){
   print('keliling persegi panjang dengan panjang= $panjang dan lebar = $lebar adalah $kelPersegiPanjang');
-  print('keliling persegi panjang dengan panjang semua sisi = $sisi adalah $kelSegitiga');
+  print('keliling segitiga dengan panjang semua sisi = $sisi adalah $kelSegitiga');
 }
