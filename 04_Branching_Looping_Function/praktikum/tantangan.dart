@@ -9,19 +9,19 @@ double tas = 100000;
 double totalPurchase = 200000;
 double discount = 0.1;
 
-//1. Function to calculate the total purchase amount
+//1. function yang menghitung jumlah dari pembelian buku, pensil, dan tas
 double calculateTotalPurchase() {
   double total = 5*buku + 10*pensil + tas;
   return total;
 }
 
-//2. Function to calculate the discount on the total purchase amount
+//2. function yang menghitung diskon dari variabel total pembelian
 double calculateDiscount() {
   double discountAmount = totalPurchase * discount;
   return discountAmount;
 }
 
-//3. Function to calculate the total purchase amount after the discount
+//3. function yang menghitung Total pembelian setelah diskon
 double calculateTotalAfterDiscount() {
   double totalAfterDiscount = totalPurchase - calculateDiscount();
   return totalAfterDiscount;
