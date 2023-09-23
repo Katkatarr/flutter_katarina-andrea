@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 List<Map<String, String>> data_kontak = [
   {
@@ -47,17 +48,17 @@ class _HelloWordState extends State<HelloWord> {
   var radioValue = '';
   List<String> checkboxValue = [];
   var isCheckbox1 = false;
-  String textFieldData = ''; // Tambahkan ini
-  // Dua variabel yang dibuat jika ingin menggunakan date
+  String textFieldData = '';
   DateTime _dueDate = DateTime.now();
   final currentDate = DateTime.now();
+  Color _currentColor = Colors.orange; // Color picker
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Muchson App'),
+          title: Text('Katarina App'),
         ),
         body: SingleChildScrollView(
           child: Container(
@@ -78,7 +79,7 @@ class _HelloWordState extends State<HelloWord> {
                   controller: inputControllers,
                   onChanged: (value) {
                     setState(() {
-                      textFieldData = value; // Perbarui textFieldData
+                      textFieldData = value;
                     });
                     print('$value');
                   },
@@ -130,6 +131,8 @@ class _HelloWordState extends State<HelloWord> {
                     print('data_kontak : $data_kontak');
                   },
                 ),
+                // Color Picker (added below the Submit button)
+                buildColorPicker(context),
                 Divider(),
                 SizedBox(
                   height: 200,
@@ -195,6 +198,52 @@ class _HelloWordState extends State<HelloWord> {
           ],
         ),
         Text(DateFormat('dd-MM-yyyy').format(_dueDate)),
+      ],
+    );
+  }
+
+  Widget buildColorPicker(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text('Color'),
+        const SizedBox(height: 10),
+        Container(height: 100, width: double.infinity, color: _currentColor),
+        const SizedBox(height: 10),
+        Center(
+          child: ElevatedButton(
+            // style: ButtonStyle(
+            //   backgroundColor: MaterialStateProperty.all(_currentColor),
+            // ),
+            child: const Text('Pick Color'),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('Pick Your Color'),
+                    content: BlockPicker(
+                      pickerColor: _currentColor,
+                      onColorChanged: (color) {
+                        setState(() {
+                          _currentColor = color;
+                        });
+                      },
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text('Save'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+          ),
+        ),
       ],
     );
   }
