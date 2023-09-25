@@ -1,4 +1,4 @@
-3 poin yang dipelajari dari materi 12 Flutter_Form
+3 poin yang dipelajari dari materi 14 Assets
 --Pengertian Asset
 Asset merupakan file yang di bundled dan di deployed bersamaan dengan aplikasi yang terdiri dari static data, icons, images, dan font file
 asset dapat digunakan apabila telah di masukan terlebih dahulu ke pubspec.yaml
