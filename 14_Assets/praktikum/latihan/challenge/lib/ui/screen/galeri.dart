@@ -1,3 +1,4 @@
+import 'package:challenge/component/detail_image.dart';
 import 'package:flutter/material.dart';
 
 class Galeri extends StatelessWidget {
@@ -16,7 +17,28 @@ class Galeri extends StatelessWidget {
               showModalBottomSheet(
                 context: context,
                 builder: (BuildContext context) {
-                  return Container(); // Ganti dengan widget yang sesuai
+                  return Container(
+                    margin: EdgeInsets.all(10),
+                    child: Column(
+                        // children: [Text('image akan ada disini')],
+                        children: [
+                          Image(
+                              image:
+                                  AssetImage('assets/images/background.jpg')),
+                          ElevatedButton(
+                              onPressed: () {
+                                Navigator.push<void>(
+                                  context,
+                                  MaterialPageRoute<void>(
+                                    builder: (BuildContext context) =>
+                                        DetailImage(),
+                                  ),
+                                );
+                                print('Ya');
+                              },
+                              child: Text('Ya'))
+                        ]),
+                  ); // Ganti dengan widget yang sesuai
                 },
               );
               print('gambar ditekan');
