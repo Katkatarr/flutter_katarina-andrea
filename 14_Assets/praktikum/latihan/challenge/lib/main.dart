@@ -20,7 +20,15 @@ class MyApp extends StatelessWidget {
       routes: {'/': (_) => const Galeri()},
     );
   }
+
+  static Widget detailImage() {
+    return const Image(
+      image: AssetImage('assets/images/background.jpg'), //asset image
+    );
+  }
 }
+
+
 
 
 
