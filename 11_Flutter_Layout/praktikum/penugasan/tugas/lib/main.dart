@@ -5,121 +5,110 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      title: 'My Flutter App',
+      theme: ThemeData.light().copyWith(
+        appBarTheme: AppBarTheme(
+          backgroundColor: Color(0xFF6200EE), // Warna latar belakang AppBar
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+          children: [
+            Flexible(
+              child: Text(
+                'My Flutter App',
+                textAlign: TextAlign.center,
+              ),
+            ), // Teks yang berada di tengah
+            const SizedBox(width: 140), // Spasi antara teks dan ikon
+            Icon(Icons.search), // Ikon pencarian (search)
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: ListView.builder(
+        itemCount:
+            8, // Jumlah item dalam daftar (termasuk tombol tindakan mengambang)
+        itemBuilder: (BuildContext context, int index) {
+          final items = [
+            'Learn Flutter',
+            'Learn ReactJS',
+            'Learn VueJS',
+            'Learn Tailwind CSS',
+            'Learn UI/UX',
+            'Learn Figma',
+            'Learn Digital Marketing'
+          ];
+
+          if (index < items.length) {
+            return Column(
+              children: [
+                ListTile(
+                  title: Text(items[index]),
+                ),
+                Divider(
+                    color: const Color.fromARGB(
+                        255, 243, 243, 243)), // Pemisah berwarna abu muda
+              ],
+            );
+          } else if (index == items.length) {
+            // Tambahkan tombol tindakan mengambang di sini dengan padding
+            return Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 10.0),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    // Fungsi yang akan dijalankan ketika tombol ditekan
+                  },
+                  backgroundColor: Color(0xFF03DAC5), // Warna sekunder (03DAC5)
+                  child: Icon(Icons.add),
+                ),
+              ),
+            );
+          }
+          return SizedBox
+              .shrink(); // Mengembalikan widget kosong jika indeks lebih dari jumlah item
+        },
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xFF6200EE), // Warna latar belakang
+        selectedItemColor: Colors.white, // Warna ikon yang dipilih
+        unselectedItemColor: Colors.white, // Warna ikon yang tidak dipilih
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite,
+                color: Colors.white), // Ikon Love dengan warna putih
+            label: 'Favorite', // Label Favorite
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search,
+                color: Colors.white), // Ikon Search dengan warna putih
+            label: 'Search', // Label Search
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info,
+                color: Colors.white), // Ikon Information dengan warna putih
+            label: 'Info', // Label Info
+          ),
+        ],
+      ),
     );
   }
 }
