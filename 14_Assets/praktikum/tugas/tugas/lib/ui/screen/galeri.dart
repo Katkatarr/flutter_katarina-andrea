@@ -7,6 +7,20 @@ class Galeri extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(children: [
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/');
+              },
+              child: Text('Galeri')),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/contact');
+              },
+              child: Text('Contact')),
+        ]),
+      ),
       appBar: AppBar(
         title: const Text('List Galeri'),
       ),
