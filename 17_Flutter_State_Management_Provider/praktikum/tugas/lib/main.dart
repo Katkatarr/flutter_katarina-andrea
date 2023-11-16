@@ -1,0 +1,49 @@
+// import 'package:challenge/ui/screen/galeri.dart';
+// import 'package:flutter/material.dart';
+// import 'package:tugas/ui/screen/galeri.dart';
+// import 'package:challenge/ui/screen/contacts.dart';
+
+import 'package:challenge/ui/screen/contacts.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ContactProvider(),
+      child: MaterialApp(
+        home: DatePickerAndColorPicker(),
+      ),
+    ),
+  );
+}
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: 'Flutter Assets',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       // initialRoute: '/',
+//       // routes: {'/': (_) => const Galeri()},
+
+//       initialRoute: '/contacts',
+//       routes: {'/': (_) => DatePickerAndColorPicker()},
+//     );
+//   }
+
+//   static Widget detailImage() {
+//     return const Image(
+//       image: AssetImage('assets/images/background.jpg'), //asset image
+//     );
+//   }
+// }
